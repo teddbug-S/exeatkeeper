@@ -20,6 +20,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -81,6 +82,7 @@ fun EKOutlineTextField(
         visualTransformation = visualTransformation,
         readOnly = readOnly,
         enabled = enabled,
+        cursorBrush = SolidColor(colors.cursorColor),
         decorationBox = { innerTextField ->
             OutlinedTextFieldDefaults.DecorationBox(
                 value = value.text,
@@ -95,7 +97,7 @@ fun EKOutlineTextField(
                 supportingText = supportingText,
                 singleLine = singleLine,
                 enabled = enabled,
-                contentPadding = PaddingValues(horizontal = 26.dp),
+                contentPadding = PaddingValues(horizontal = 22.dp),
                 isError = isError,
                 interactionSource = remember {
                     MutableInteractionSource()

@@ -84,9 +84,6 @@ fun PasswordResetScreen(navController: NavController) {
                         EKOutlineTextField(
                             value = oldPassword,
                             placeholder = R.string.password,
-                            colors = OutlinedTextFieldDefaults.colors(
-                                cursorColor = MaterialTheme.colorScheme.primary
-                            )
                         )
                     }
 

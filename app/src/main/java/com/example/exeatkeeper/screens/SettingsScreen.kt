@@ -40,6 +40,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.net.toUri
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.example.exeatkeeper.components.SelectThemeDialog
@@ -74,13 +75,20 @@ fun SettingsScreen(
         }
 
         var uri: Uri? by remember {
-            mutableStateOf(Uri.parse("android.resource://com.example.exeatkeeper/drawable/logo"))
+            mutableStateOf(
+                Uri.parse(
+                    context.filesDir.resolve("profilePicture.jpg").toUri().toString()
+                )
+            )
         }
 
         val singleMediaPicker = rememberLauncherForActivityResult(
             contract = ActivityResultContracts.PickVisualMedia(),
             onResult = {
-                uri = it
+                val input = it?.let { it1 -> context.contentResolver.openInputStream(it1) }
+                val outputFile = context.filesDir.resolve("profilePicture.jpg")
+                input?.copyTo(outputFile.outputStream())
+                uri = outputFile.toUri()
             })
 
 

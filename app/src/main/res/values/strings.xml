@@ -35,4 +35,13 @@
     <string name="change_password">Change password</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
+    <string name="location">Location</string>
+    <string name="enter_student_destination">Enter student destination</string>
+    <string name="description">Description</string>
+    <string name="reasons_for_signing_exeat">Reasons for signing exeat</string>
+    <string name="create">Create</string>
+    <string name="student_name">Student name</string>
+    <string name="grade">Class</string>
+    <string name="father_s_number">Father\'s number</string>
+    <string name="mother_s_number">Mother\'s number</string>
 </resources>

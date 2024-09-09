@@ -76,7 +76,7 @@ fun EKBottomNavigationBar(navController: NavHostController, selectedIndex: Share
             NavigationBarItem(
                 selected = selectedIndex.value == index,
                 onClick = {
-                    navController.popBackStack(HomeScreenClass, inclusive = true)
+                    navController.popBackStack(HomeScreenClass, inclusive = false)
                     navController.navigate(ekNavigationItem.screenName) {
                         popUpTo(navController.graph.findStartDestination().id) {
                             saveState = true

@@ -1,6 +1,8 @@
 package com.example.exeatkeeper.navigation
 
 import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
@@ -39,10 +41,10 @@ fun Navigation(
         startDestination = startDestination,
         enterTransition = {
             slideInVertically(
-                tween(500, easing = FastOutSlowInEasing),
-                initialOffsetY = { 100 })
+                tween(400),
+                initialOffsetY = { 200 })
         },
-        exitTransition = { fadeOut(tween(0, 0)) },
+        exitTransition = { fadeOut(tween(400)) },
     ) {
 
         composable<SignUpScreenClass> {

@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.serialization)
@@ -20,6 +22,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
     }
 
     buildTypes {
@@ -37,6 +40,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -51,6 +55,9 @@ android {
     }
 }
 
+
+val supabaseVersion = "2.6.0"
+val ktorVersion = "2.3.12"
 
 dependencies {
 
@@ -83,5 +90,4 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.7.0")
     api(libs.datastore.preferences)
     api(libs.datastore)
-
 }

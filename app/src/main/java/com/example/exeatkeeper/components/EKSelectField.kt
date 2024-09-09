@@ -18,6 +18,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -38,7 +39,12 @@ import com.example.exeatkeeper.ui.theme.ExeatKeeperTheme
 
 
 @Composable
-fun EKSelectField(@StringRes label: Int, items: List<String>, selectedItem: SharedTextState) {
+fun EKSelectField(
+    @StringRes label: Int,
+    items: List<String>,
+    selectedItem: SharedTextState,
+    colors: TextFieldColors = OutlinedTextFieldDefaults.colors()
+) {
     var expanded by remember { mutableStateOf(false) }
     var textFieldSize by remember { mutableStateOf(Size.Zero) }
 
@@ -51,13 +57,7 @@ fun EKSelectField(@StringRes label: Int, items: List<String>, selectedItem: Shar
         EKOutlineTextField(
             value = selectedItem,
             onValueChange = { selectedItem.text = it },
-            colors = OutlinedTextFieldDefaults.colors(
-                unfocusedBorderColor = MaterialTheme.colorScheme.primary,
-                focusedBorderColor = MaterialTheme.colorScheme.primary,
-                unfocusedPlaceholderColor = MaterialTheme.colorScheme.primary,
-                focusedTrailingIconColor = MaterialTheme.colorScheme.onPrimary,
-                unfocusedTrailingIconColor = MaterialTheme.colorScheme.onPrimary,
-            ),
+            colors = colors,
             modifier = Modifier
                 .fillMaxWidth()
                 .onGloballyPositioned { coordinates ->
@@ -69,7 +69,7 @@ fun EKSelectField(@StringRes label: Int, items: List<String>, selectedItem: Shar
             placeholder = label,
             trailingIcon = {
                 IconButton(onClick = { expanded = !expanded }) {
-                    Icon(imageVector = icon, contentDescription = null)
+                    Icon(imageVector = icon, contentDescription = null, tint = colors.cursorColor)
                 }
             }
         )

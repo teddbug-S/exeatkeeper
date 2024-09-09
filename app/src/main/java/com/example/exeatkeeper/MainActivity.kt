@@ -59,8 +59,6 @@ class MainActivity : ComponentActivity() {
         }
 
         setContent {
-
-            val appContext = LocalContext.current.applicationContext
             ExeatKeeperApp()
         }
     }

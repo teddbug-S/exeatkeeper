@@ -56,6 +56,10 @@ fun EKOutlineTextField(
     colors: TextFieldColors = OutlinedTextFieldDefaults.colors(),
 ) {
 
+    val innerPadding = if (singleLine) {
+        PaddingValues(horizontal = 22.dp)
+    } else PaddingValues(20.dp)
+
     BasicTextField(
         value = value.text,
         onValueChange = if (onValueChange.equals({})) onValueChange else { it: String ->
@@ -97,7 +101,7 @@ fun EKOutlineTextField(
                 supportingText = supportingText,
                 singleLine = singleLine,
                 enabled = enabled,
-                contentPadding = PaddingValues(horizontal = 22.dp),
+                contentPadding = innerPadding,
                 isError = isError,
                 interactionSource = remember {
                     MutableInteractionSource()

@@ -34,6 +34,7 @@ import com.example.exeatkeeper.lib.showTopAndBottomBar
 import com.example.exeatkeeper.navigation.HistoryScreenClass
 import com.example.exeatkeeper.navigation.HomeScreenClass
 import com.example.exeatkeeper.navigation.Navigation
+import com.example.exeatkeeper.navigation.SignUpScreenClass
 import com.example.exeatkeeper.navigation.StudentsScreenClass
 import com.example.exeatkeeper.ui.theme.ExeatKeeperTheme
 

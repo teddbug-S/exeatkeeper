@@ -57,9 +57,9 @@ class MainActivity : ComponentActivity() {
                 zoomY.start()
             }
         }
-
         setContent {
-            ExeatKeeperApp()
+
+        ExeatKeeperApp()
         }
     }
 }

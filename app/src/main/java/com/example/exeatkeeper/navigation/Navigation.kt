@@ -52,19 +52,19 @@ fun Navigation(
         }
 
         composable<LoginScreenClass> {
-            LoginScreen()
+            LoginScreen(navController)
         }
 
         composable<SelectSchoolScreenClass> {
-            SelectSchoolScreen()
+            SelectSchoolScreen(navController)
         }
 
         composable<SecurityPersonnelScreenClass> {
-            SecurityPersonnelScreen()
+            SecurityPersonnelScreen(navController)
         }
 
         composable<DataUploadScreenClass> {
-            DataUploadScreen()
+            DataUploadScreen(navController)
         }
 
         composable<HomeScreenClass> {

@@ -5,6 +5,8 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     id("org.jetbrains.kotlin.plugin.compose") version "2.0.0"
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.android.application")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -90,4 +92,7 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.7.0")
     api(libs.datastore.preferences)
     api(libs.datastore)
+
+    implementation(platform("com.google.firebase:firebase-bom:33.3.0"))
+    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
 }

@@ -29,7 +29,7 @@ import com.example.exeatkeeper.ui.theme.ExeatKeeperTheme
 
 
 @Composable
-fun SelectSchoolScreen() {
+fun SelectSchoolScreen(navController: NavHostController) {
 
     val schoolList = listOf("Mawuli School", "Achimota School", "Presec Legon")
     val houseList = listOf(

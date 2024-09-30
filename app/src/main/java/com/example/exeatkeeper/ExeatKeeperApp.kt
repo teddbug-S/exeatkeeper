@@ -127,7 +127,7 @@ fun ExeatKeeperApp() {
         ) { innerPadding ->
             Navigation(
                 navController = navController,
-                startDestination = HomeScreenClass,
+                startDestination = SignUpScreenClass,
                 innerPadding = innerPadding
             )
         }

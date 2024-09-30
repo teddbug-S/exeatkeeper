@@ -32,7 +32,7 @@ import com.example.exeatkeeper.ui.theme.ExeatKeeperTheme
 
 
 @Composable
-fun DataUploadScreen() {
+fun DataUploadScreen(navController: NavHostController) {
 
     val addStudentsManuallyChecked = remember {
         mutableStateOf(false)

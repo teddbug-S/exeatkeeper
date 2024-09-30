@@ -38,7 +38,7 @@ import com.example.exeatkeeper.ui.theme.ExeatKeeperTheme
 
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavHostController) {
 
     // initialize text field values
     var emailValue = SharedTextState("")
